@@ -9,6 +9,7 @@ import java.util.List;
 import models.Role;
 
 public class RoleDB {
+    
     public List<Role> getAll() throws Exception {
         List<Role> roles = new ArrayList<>();
         ConnectionPool cp = ConnectionPool.getInstance();

@@ -3,6 +3,7 @@ package services;
 
 import dataaccess.UserDB;
 import java.util.List;
+import models.Role;
 import models.User;
 
 public class UserService {
@@ -18,13 +19,13 @@ public class UserService {
         return users;
     }
     
-    public void insert(String email, boolean active, String firstname, String lastname, String password, int role) throws Exception {
+    public void insert(String email, boolean active, String firstname, String lastname, String password, Role role) throws Exception {
         User user = new User(email, active, firstname, lastname, password, role);
         UserDB userDB = new UserDB();
         userDB.insert(user);
     }
     
-    public void update(String email, boolean active, String firstname, String lastname, String password, int role) throws Exception {
+    public void update(String email, boolean active, String firstname, String lastname, String password, Role role) throws Exception {
         User user = new User(email, active, firstname, lastname, password, role);
         UserDB userDB = new UserDB();
         userDB.update(user);
